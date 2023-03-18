@@ -1,7 +1,7 @@
 from typing import Optional, List
 
-from KeyValue import KeyValue
-from Result import Detail
+from hooks.libs.KeyValue import KeyValue
+from hooks.libs.Result import Detail
 
 
 class ErrorDetail(Detail):
