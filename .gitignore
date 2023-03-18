@@ -1,2 +1,10 @@
-.vscode
+node_modules
+package-lock.json
 .idea
+*.egg-info
+*.py[co]
+.*.sw[a-z]
+.coverage
+.tox
+dist
+.vscode
