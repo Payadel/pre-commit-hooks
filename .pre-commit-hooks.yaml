@@ -1,0 +1,5 @@
+-   id: run-scripts
+    name: Run Scripts
+    description: Run your local hook scripts.
+    entry: run-scripts
+    language: python

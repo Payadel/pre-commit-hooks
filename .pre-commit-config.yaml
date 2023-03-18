@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: commit-scripts
+        name: Commit Scripts
+        description: Run commit scripts from directory
+        entry: run-scripts
+        language: python
+        stages: ["commit-msg"]
+        args: ["-d=tests/scripts/commit"]
+
+      - id: push-script
+        name: Push Script
+        description: Run single push script
+        entry: run-scripts
+        language: python
+        stages: ["push"]
+        args: ["-f=tests/scripts/single-script.py"]

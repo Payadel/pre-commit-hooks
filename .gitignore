@@ -1,2 +1,8 @@
+*.egg-info
+*.py[co]
+.*.sw[a-z]
+.coverage
+.tox
+dist
 .vscode
 .idea
