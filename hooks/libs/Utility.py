@@ -2,8 +2,8 @@ import os
 import subprocess
 from typing import List
 
-from hooks.libs.Details import SuccessDetail, RunShellErrorDetail
-from hooks.libs.Result import Result
+from Details import SuccessDetail, RunShellErrorDetail
+from Result import Result
 
 
 class Utility:

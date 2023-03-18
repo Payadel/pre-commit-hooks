@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/Payadel/pre-commit-hooks/compare/v0.0.1...v0.0.2) (2023-03-18)
+
+
+### Fixes
+
+* update imports ([3534f10](https://github.com/Payadel/pre-commit-hooks/commit/3534f1045749f5c21be062c2d79a5066b25d7de1))
+
 ### 0.0.1 (2023-03-18)
 
 

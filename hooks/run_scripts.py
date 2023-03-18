@@ -2,14 +2,10 @@ import argparse
 import os.path
 from typing import List, Optional
 
-from hooks.libs.Details import ValidationErrorDetail, SuccessDetail, ErrorDetail
-from hooks.libs.KeyValue import KeyValue
-from hooks.libs.Result import Result
-from hooks.libs.Utility import Utility
-
-configs: dict = {
-    "verbose": False
-}
+from libs.Details import ValidationErrorDetail, SuccessDetail, ErrorDetail
+from libs.KeyValue import KeyValue
+from libs.Result import Result
+from libs.Utility import Utility
 
 
 def get_args():

@@ -16,8 +16,15 @@ repos:
     hooks:
       - id: action-validator
         stages: [ commit-msg ]
+#  - repo: https://github.com/Payadel/pre-commit-hooks
+#    rev: v0.0.1
+#    hooks:
+#      - id: run-scripts
+#        name: "Alias Name"
+#        args: ["-d=tests/scripts/commit"]
+#        stages: ["commit-msg"]
 
-  # Test
+# Test
 #  - repo: local
 #    hooks:
 #      - id: commit-scripts
