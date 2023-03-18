@@ -1,18 +1,37 @@
 repos:
-  - repo: local
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.4.0
     hooks:
-      - id: commit-scripts
-        name: Commit Scripts
-        description: Run commit scripts from directory
-        entry: run-scripts
-        language: python
-        stages: ["commit-msg"]
-        args: ["-d=tests/scripts/commit"]
+      - id: commitlint
+        stages: [ commit-msg ]
+        args: [ "--config=.configs/commitlint.config.js" ]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: no-commit-to-branch
+        stages: [ prepare-commit-msg, merge-commit, push ]
+        always_run: false
+  - repo: https://github.com/mpalmer/action-validator
+    rev: v0.5.1
+    hooks:
+      - id: action-validator
+        stages: [ commit-msg ]
 
-      - id: push-script
-        name: Push Script
-        description: Run single push script
-        entry: run-scripts
-        language: python
-        stages: ["push"]
-        args: ["-f=tests/scripts/single-script.py"]
+  # Test
+#  - repo: local
+#    hooks:
+#      - id: commit-scripts
+#        name: Commit Scripts
+#        description: Run commit scripts from directory
+#        entry: run-scripts
+#        language: python
+#        stages: ["commit-msg"]
+#        args: ["-d=tests/scripts/commit"]
+#
+#      - id: push-script
+#        name: Push Script
+#        description: Run single push script
+#        entry: run-scripts
+#        language: python
+#        stages: ["push"]
+#        args: ["-f=tests/scripts/single-script.py"]

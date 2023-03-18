@@ -1,3 +1,6 @@
+node_modules
+package-lock.json
+.idea
 *.egg-info
 *.py[co]
 .*.sw[a-z]
@@ -5,4 +8,3 @@
 .tox
 dist
 .vscode
-.idea
