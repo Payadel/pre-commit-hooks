@@ -5,6 +5,7 @@ from pre_commit_hooks.libs.Result import Detail
 
 
 class ErrorDetail(Detail):
+    """ Shows the details of the error operation. """
     errors: Optional[List[KeyValue]]
     exception: Optional[Exception]
 
@@ -29,6 +30,7 @@ class ErrorDetail(Detail):
 
 
 class ValidationErrorDetail(ErrorDetail):
+    """ Shows the details of the validation errors. """
     def __init__(self, title: Optional[str] = "Validation Error",
                  message: Optional[str] = "One or more fields are not valid.",
                  code: Optional[int] = 1,
@@ -37,6 +39,7 @@ class ValidationErrorDetail(ErrorDetail):
 
 
 class RunShellErrorDetail(ErrorDetail):
+    """ Shows the details of the execution error of a shell. """
     script_name: Optional[str] = None
     output: Optional[str] = None
 
@@ -59,6 +62,7 @@ class RunShellErrorDetail(ErrorDetail):
 
 
 class SuccessDetail(Detail):
+    """ Shows the details of a successful operation """
     def __init__(self, title: Optional[str] = "Operation was successful",
                  message: Optional[str] = None,
                  code: Optional[int] = 0):

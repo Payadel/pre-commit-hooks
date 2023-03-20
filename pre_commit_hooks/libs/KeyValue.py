@@ -1,4 +1,5 @@
 class KeyValue:
+    """ Key-Value structure for error details, etc. """
     key: str
     message: str
 
