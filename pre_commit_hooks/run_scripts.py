@@ -53,7 +53,7 @@ def run_script(script_path: str, args: List[str]) -> Result:
     try:
         result = Utility.run_shell([script_path] + args)
         return result
-    except Exception as error:  # pylint: disable=broad-exception-caught
+    except Exception as error:  # pylint: disable=broad-except
         return Result.fail(ErrorDetail(title="An exception has occurred.", exception=error))
 
 
