@@ -66,6 +66,10 @@ jobs:
           echo "version=$version" >> $GITHUB_OUTPUT
           echo "New Version: $version"
           
+          echo "Update poetry version..."
+          pip install poetry
+          poetry version $version
+          
           git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)
 
       - name: create release file

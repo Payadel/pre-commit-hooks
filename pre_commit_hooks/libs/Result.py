@@ -1,12 +1,15 @@
-from typing import Optional, Any
+from typing import Any, Optional
 
 
 class Detail:
+    """ Details of the operation performed """
     title: Optional[str]
     message: Optional[str]
     code: Optional[int]
 
-    def __init__(self, title: Optional[str] = None, message: Optional[str] = None, code: Optional[int] = None):
+    def __init__(self, title: Optional[str] = None,
+                 message: Optional[str] = None,
+                 code: Optional[int] = None):
         self.title = title
         self.message = message
         self.code = code
@@ -25,6 +28,7 @@ class Detail:
 
 
 class Result:
+    """ It stores information about the output of the function. """
     success: bool
     detail: Optional[Detail] = None
     value: Optional[Any] = None
@@ -35,13 +39,16 @@ class Result:
 
     @staticmethod
     def ok(detail: Optional[Detail] = None):
+        """ Create success Result """
         return Result(True, detail)
 
     @staticmethod
     def fail(detail: Optional[Detail] = None):
+        """ Create fail Result """
         return Result(False, detail)
 
-    def code(self):
+    def code(self) -> int:
+        """ Get or calculate result code """
         if self.detail and self.detail.code:
             return self.detail.code
         if self.success:
