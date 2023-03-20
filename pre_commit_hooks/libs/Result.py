@@ -1,4 +1,4 @@
-from typing import Optional, Any
+from typing import Any, Optional
 
 
 class Detail:
@@ -6,7 +6,9 @@ class Detail:
     message: Optional[str]
     code: Optional[int]
 
-    def __init__(self, title: Optional[str] = None, message: Optional[str] = None, code: Optional[int] = None):
+    def __init__(self, title: Optional[str] = None,
+                 message: Optional[str] = None,
+                 code: Optional[int] = None):
         self.title = title
         self.message = message
         self.code = code

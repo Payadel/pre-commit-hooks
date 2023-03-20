@@ -2,8 +2,8 @@ import os
 import subprocess
 from typing import List
 
-from hooks.libs.Details import SuccessDetail, RunShellErrorDetail
-from hooks.libs.Result import Result
+from pre_commit_hooks.libs.Details import RunShellErrorDetail, SuccessDetail
+from pre_commit_hooks.libs.Result import Result
 
 
 class Utility:

@@ -2,10 +2,11 @@ import argparse
 import os.path
 from typing import List, Optional
 
-from hooks.libs.Details import ValidationErrorDetail, SuccessDetail, ErrorDetail
-from hooks.libs.KeyValue import KeyValue
-from hooks.libs.Result import Result
-from hooks.libs.Utility import Utility
+from pre_commit_hooks.libs.Details import (ErrorDetail, SuccessDetail,
+                                           ValidationErrorDetail)
+from pre_commit_hooks.libs.KeyValue import KeyValue
+from pre_commit_hooks.libs.Result import Result
+from pre_commit_hooks.libs.Utility import Utility
 
 
 def get_args():

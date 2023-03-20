@@ -5,26 +5,58 @@ repos:
       - id: commitlint
         stages: [ commit-msg ]
         args: [ "--config=.configs/commitlint.config.js" ]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
       - id: no-commit-to-branch
         stages: [ prepare-commit-msg, merge-commit, push ]
         always_run: false
+
   - repo: https://github.com/mpalmer/action-validator
     rev: v0.5.1
     hooks:
       - id: action-validator
         stages: [ commit-msg ]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.11.5
+    hooks:
+      - id: isort
+        args: [ "--check", "pre_commit_hooks" ]
+
+  - repo: https://github.com/PyCQA/pylint/
+    rev: v2.14.5
+    hooks:
+      - id: pylint
+        exclude: tests/  # Prevent files in tests/ to be passed in to pylint.
+
+  - repo: local
+    hooks:
+      - id: check-pytest-before-push
+        name: check pytest before push
+        language: script
+        entry: .hooks/check-pytest.sh
+        args: [ "--disable-pytest-warnings" ]
+        stages: [ push ]
+
+# Test
 #  - repo: https://github.com/Payadel/pre-commit-hooks
 #    rev: v0.0.1
 #    hooks:
 #      - id: run-scripts
 #        name: "Alias Name"
-#        args: ["-d=tests/scripts/commit"]
+#        args: ["-d=tests/fake-scripts/commit"]
 #        stages: ["commit-msg"]
 
-# Test
 #  - repo: local
 #    hooks:
 #      - id: commit-scripts
@@ -33,7 +65,7 @@ repos:
 #        entry: run-scripts
 #        language: python
 #        stages: ["commit-msg"]
-#        args: ["-d=tests/scripts/commit"]
+#        args: ["-d=tests/fake-scripts/commit"]
 #
 #      - id: push-script
 #        name: Push Script
@@ -41,4 +73,4 @@ repos:
 #        entry: run-scripts
 #        language: python
 #        stages: ["push"]
-#        args: ["-f=tests/scripts/single-script.py"]
+#        args: ["-f=tests/fake-scripts/single-script.py"]

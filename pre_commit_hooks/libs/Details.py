@@ -1,15 +1,18 @@
-from typing import Optional, List
+from typing import List, Optional
 
-from hooks.libs.KeyValue import KeyValue
-from hooks.libs.Result import Detail
+from pre_commit_hooks.libs.KeyValue import KeyValue
+from pre_commit_hooks.libs.Result import Detail
 
 
 class ErrorDetail(Detail):
     errors: Optional[List[KeyValue]]
     exception: Optional[Exception]
 
-    def __init__(self, title: Optional[str] = "Error", message: Optional[str] = None, code: Optional[int] = 1,
-                 errors: Optional[List[KeyValue]] = None, exception: Optional[Exception] = None):
+    def __init__(self, title: Optional[str] = "Error",
+                 message: Optional[str] = None,
+                 code: Optional[int] = 1,
+                 errors: Optional[List[KeyValue]] = None,
+                 exception: Optional[Exception] = None):
         super().__init__(title, message, code)
         self.errors = errors
         self.exception = exception
@@ -27,7 +30,8 @@ class ErrorDetail(Detail):
 
 class ValidationErrorDetail(ErrorDetail):
     def __init__(self, title: Optional[str] = "Validation Error",
-                 message: Optional[str] = "One or more fields are not valid.", code: Optional[int] = 1,
+                 message: Optional[str] = "One or more fields are not valid.",
+                 code: Optional[int] = 1,
                  errors: Optional[List[KeyValue]] = None):
         super().__init__(title, message, code, errors)
 
@@ -55,6 +59,7 @@ class RunShellErrorDetail(ErrorDetail):
 
 
 class SuccessDetail(Detail):
-    def __init__(self, title: Optional[str] = "Operation was successful", message: Optional[str] = None,
+    def __init__(self, title: Optional[str] = "Operation was successful",
+                 message: Optional[str] = None,
                  code: Optional[int] = 0):
         super().__init__(title, message, code)
