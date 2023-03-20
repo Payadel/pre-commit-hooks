@@ -31,6 +31,7 @@ class ErrorDetail(Detail):
 
 class ValidationErrorDetail(ErrorDetail):
     """ Shows the details of the validation errors. """
+
     def __init__(self, title: Optional[str] = "Validation Error",
                  message: Optional[str] = "One or more fields are not valid.",
                  code: Optional[int] = 1,
@@ -63,6 +64,7 @@ class RunShellErrorDetail(ErrorDetail):
 
 class SuccessDetail(Detail):
     """ Shows the details of a successful operation """
+
     def __init__(self, title: Optional[str] = "Operation was successful",
                  message: Optional[str] = None,
                  code: Optional[int] = 0):
