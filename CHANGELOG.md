@@ -1,7 +1,24 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.3](https://github.com/Payadel/pre-commit-hooks/compare/v0.0.2...v0.0.3) (2023-03-20)
+
+
+### Features
+
+* update poetry version in release action ([635e980](https://github.com/Payadel/pre-commit-hooks/commit/635e9803877af6ca58f434041e15a827776361f0))
+
+
+### Fixes
+
+* module imports ([3169e56](https://github.com/Payadel/pre-commit-hooks/commit/3169e56e6d0ed6dd8376aba26e756db1d6b87fd0))
+* pylint errors ([bec5f02](https://github.com/Payadel/pre-commit-hooks/commit/bec5f02cedb568583adfbae2fcb53b54db387d71))
+
+
+### Development: CI/CD, Build, etc
+
+* **release:** fix update poetry version in release.yaml ([f09470c](https://github.com/Payadel/pre-commit-hooks/commit/f09470c1ad0189b54fce3f0cee68a82b66d82433))
 
 ### [0.0.2](https://github.com/Payadel/pre-commit-hooks/compare/v0.0.1...v0.0.2) (2023-03-18)
 
