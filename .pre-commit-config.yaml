@@ -47,30 +47,3 @@ repos:
         entry: .hooks/check-pytest.sh
         args: [ "--disable-pytest-warnings" ]
         stages: [ push ]
-
-# Test
-#  - repo: https://github.com/Payadel/pre-commit-hooks
-#    rev: v0.0.1
-#    hooks:
-#      - id: run-scripts
-#        name: "Alias Name"
-#        args: ["-d=tests/fake-scripts/commit"]
-#        stages: ["commit-msg"]
-
-#  - repo: local
-#    hooks:
-#      - id: commit-scripts
-#        name: Commit Scripts
-#        description: Run commit scripts from directory
-#        entry: run-scripts
-#        language: python
-#        stages: ["commit-msg"]
-#        args: ["-d=tests/fake-scripts/commit"]
-#
-#      - id: push-script
-#        name: Push Script
-#        description: Run single push script
-#        entry: run-scripts
-#        language: python
-#        stages: ["push"]
-#        args: ["-f=tests/fake-scripts/single-script.py"]
