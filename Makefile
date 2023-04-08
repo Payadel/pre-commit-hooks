@@ -23,9 +23,6 @@ release-action: ## Run release action
 version: ## Get current program version
 	node -p -e "require('./package.json').version"
 
-version-as: ## Update program version
-	standard-version --skip.changelog --skip.tag --skip.commit --release-as $(RELEASE_AS)
-
 help: ## Display this help message
 	@echo "Usage: make <target>"
 	@echo ""
