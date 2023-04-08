@@ -11,3 +11,4 @@ package-lock.json
 *.py[co]
 .*.sw[a-z]
 poetry.lock
+**.pyc

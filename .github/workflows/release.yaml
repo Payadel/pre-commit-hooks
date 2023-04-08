@@ -3,6 +3,11 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
+      skip_release_file:
+        type: boolean
+        required: false
+        default: true
+        description: Skip create release file
       release_file_name:
         required: true
         default: 'release'
@@ -26,7 +31,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  default:
+  Release:
     runs-on: ubuntu-latest
 
     # Limit branch:
@@ -41,6 +46,7 @@ jobs:
 
       - name: Print inputs
         run: |
+          echo "skip_release_file: ${{ inputs.skip_release_file }}"
           echo "release_file_name: ${{ inputs.release_file_name }}"
           echo "release_directory: ${{ inputs.release_directory }}"
           echo "skip_changelog: ${{ inputs.skip_changelog }}"
@@ -54,10 +60,20 @@ jobs:
         with:
           version: ${{ inputs.version }}
           skip-changelog: ${{ inputs.skip_changelog }}
-          skip-release-file: true
+          skip-release-file: ${{ inputs.skip_release_file }}
+          release-directory: ${{ inputs.release_directory }}
+          release-file-name: ${{ inputs.release_file_name }}
           create-pr-for-branch: ${{ inputs.create_pr_for_branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update poetry version
+        run: |
+          pip install poetry
+          poetry version ${{ steps.release.outputs.version }}
+          git add pyproject.toml
+          git commit -m "chore: update pyproject to ${{ steps.release.outputs.version }}"
+          git push
 
       - name: GitHub Release
         uses: ncipollo/release-action@v1
