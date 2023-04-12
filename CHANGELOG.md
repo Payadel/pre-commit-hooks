@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/Payadel/pre-commit-hooks/compare/v0.0.3...v0.1.0) (2023-04-12)
+
+### Features
+
+* big refactor with `on_rails` library & Fix bugs & Add
+  tests ([f8c9e5f](https://github.com/Payadel/pre-commit-hooks/commit/f8c9e5f6096d14e6d6ba56caf1b95e0c92c51ffb))
+
+### Development: CI/CD, Build, etc
+
+* add `on_rails` to
+  tox.ini ([6e4ceb7](https://github.com/Payadel/pre-commit-hooks/commit/6e4ceb78e805a8521a2677549a7d642fa4aac53a))
+* add
+  requirements.txt ([096f57d](https://github.com/Payadel/pre-commit-hooks/commit/096f57d8745c3ca95bdd79179635d0fe1ad6ae2d))
+* update Payadel/release-sv-action to
+  0.2.1 ([8be5bac](https://github.com/Payadel/pre-commit-hooks/commit/8be5bacda0018cdf7df8508b03a9c1a01184821f))
+* use Payadel actions in changelog.yaml and
+  release.yaml ([619a854](https://github.com/Payadel/pre-commit-hooks/commit/619a854e4a0fc6bd16803018f26d9dcc6c78429f))
+
 ### [0.0.3](https://github.com/Payadel/pre-commit-hooks/compare/v0.0.2...v0.0.3) (2023-03-20)
 
 ### Fixes
