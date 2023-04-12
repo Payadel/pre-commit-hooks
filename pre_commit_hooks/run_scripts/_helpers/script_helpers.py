@@ -127,9 +127,9 @@ def _run_scripts(files: Optional[List[str]], args: Optional[List[str]] = None) -
         get_file_name(file) \
             .on_success_tee(lambda name: print(f"Running {name}...", end="")) \
             .on_fail_tee(lambda prev_result: (
-                print(f"Warning: Can not detect script name ({file})."),
-                print("Running...")
-            ))
+            print(f"Warning: Can not detect script name ({file})."),
+            print("Running...")
+        ))
         command = f"{file} {args_str}"
         result = _run_shell(command) \
             .on_success_tee(lambda: print("done.")) \
