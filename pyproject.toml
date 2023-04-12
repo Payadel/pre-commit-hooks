@@ -11,6 +11,7 @@ packages = [{ include = "pre_commit_hooks" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+on-rails = "^3.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -22,7 +23,7 @@ coverage = "^7.2.2"
 tox = "^4.4.7"
 
 [tool.poetry.scripts]
-run-scripts = "pre_commit_hooks.run_scripts:main"
+run-scripts = "pre_commit_hooks.run_scripts.main:main"
 
 [build-system]
 requires = ["poetry-core"]
