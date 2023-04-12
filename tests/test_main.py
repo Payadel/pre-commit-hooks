@@ -35,7 +35,7 @@ class TestMain(unittest.TestCase):
                 lambda scripts: [_run_shell(f"chmod +x {file}").on_fail_raise_exception() for file in scripts]) \
                 .on_fail_raise_exception()
 
-            result = main(f" ")
+            result = main(" ")
             assert_result_with_type(self, result, expected_success=False, expected_detail_type=ValidationError)
             assert_error_detail(self, result.detail, expected_title="One or more validation errors occurred",
                                 expected_message='At least one directory or file must be set.', expected_code=400)
