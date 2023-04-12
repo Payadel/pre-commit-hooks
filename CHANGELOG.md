@@ -1,7 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.1.1](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.0...v0.1.1) (2023-04-12)
+
+
+### Fixes
+
+* update `on_rails` package to 4.0.1 ([7e97e78](https://github.com/Payadel/pre-commit-hooks/commit/7e97e7822e7c2c83c97e2d903955d46c7a807010))
 
 ## [0.1.0](https://github.com/Payadel/pre-commit-hooks/compare/v0.0.3...v0.1.0) (2023-04-12)
 
