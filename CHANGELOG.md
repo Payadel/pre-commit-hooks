@@ -1,7 +1,14 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.0.0-beta](https://github.com/Payadel/pre-commit-hooks/compare/v0.0.3...v1.0.0-beta) (2023-04-12)
+
+
+### Development: CI/CD, Build, etc
+
+* update Payadel/release-sv-action to 0.2.1 ([8be5bac](https://github.com/Payadel/pre-commit-hooks/commit/8be5bacda0018cdf7df8508b03a9c1a01184821f))
+* use Payadel actions in changelog.yaml and release.yaml ([619a854](https://github.com/Payadel/pre-commit-hooks/commit/619a854e4a0fc6bd16803018f26d9dcc6c78429f))
 
 ### [0.0.3](https://github.com/Payadel/pre-commit-hooks/compare/v0.0.2...v0.0.3) (2023-03-20)
 
