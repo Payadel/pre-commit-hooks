@@ -1,0 +1,25 @@
+repos:
+  - repo: local
+    hooks:
+      - id: run-script-file
+        name: run file script
+        entry: run-scripts
+        language: python
+        args: [ "-f=tests/pre-commit-test/single-script.py", "arg1", "arg2", "arg3"]
+        always_run: true
+
+      - id: run-directory
+        name: run directory script
+        entry: run-scripts
+        language: python
+        args: [ "-d=tests/pre-commit-test/commit", "arg1", "arg2", "arg3" ]
+        always_run: true
+        pass_filenames: false
+
+      - id: run-invalid-path
+        name: run invalid path
+        entry: run-scripts
+        language: python
+        args: [ "-d=invalid-path", "arg" ]
+        always_run: true
+        pass_filenames: false

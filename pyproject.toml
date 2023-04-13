@@ -1,7 +1,7 @@
 # https://python-poetry.org/docs/pyproject/
 [tool.poetry]
 name = "pre-commit-hooks"
-version = "0.1.1"
+version = "0.1.2"
 description = "Some hooks for pre-commit."
 authors = ["Payadel <payadelteam@gmail.com>"]
 license = "GPLV3"
@@ -11,7 +11,7 @@ packages = [{ include = "pre_commit_hooks" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-on-rails = "^3.1.0"
+on-rails = "4.0.1"
 
 
 [tool.poetry.group.dev.dependencies]

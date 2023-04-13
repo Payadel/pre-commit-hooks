@@ -1,12 +1,13 @@
 # pylint: disable=all
-
+import os
+import tempfile
 import unittest
 
 from on_rails import (ValidationError, assert_error_detail,
                       assert_result_with_type)
 
 from pre_commit_hooks.run_scripts._helpers.argument_helpers import get_args
-from tests._helpers import assert_input_args, get_test_path
+from tests._helpers import assert_input_args
 
 
 class TestArgumentHelpers(unittest.TestCase):
@@ -22,27 +23,46 @@ class TestArgumentHelpers(unittest.TestCase):
                           expected_other=['-a', 'aaa', 'bbb'])
 
     def test_get_args_validation_file(self):
-        cwd = get_test_path()
-        file_path = f"{cwd}/fake-scripts/single-script.py"
-        result = get_args(validate_inputs=True, args=['-f', file_path])
+        # create a temporary directory and some files in it
+        with tempfile.TemporaryDirectory() as tmp_dir_name:
+            file = os.path.join(tmp_dir_name, "file.py")
+            with open(file, "w") as f:
+                f.write("print('file1')")
 
-        assert_input_args(self, result, expected_files=[file_path])
+            result = get_args(validate_inputs=True, args=['-f', file])
+
+            assert_input_args(self, result, expected_files=[file])
 
     def test_get_args_validation_dir(self):
-        cwd = get_test_path()
-        dir_path = f"{cwd}/fake-scripts/commit/"
-        result = get_args(validate_inputs=True, args=['-d', dir_path])
+        # create a temporary directory and some files in it
+        with tempfile.TemporaryDirectory() as tmp_dir_name:
+            dir1 = os.path.join(tmp_dir_name, "dir")
+            os.makedirs(dir1)
 
-        assert_input_args(self, result, expected_directories=[dir_path])
+            file = os.path.join(dir1, "file.py")
+            with open(file, "w") as f:
+                f.write("print('file')")
+
+            result = get_args(validate_inputs=True, args=['-d', dir1])
+
+            assert_input_args(self, result, expected_directories=[dir1])
 
     def test_get_args_validation_complete(self):
-        cwd = get_test_path()
-        file_path = f"{cwd}/fake-scripts/single-script.py"
-        dir_path = f"{cwd}/fake-scripts/commit/"
+        # create a temporary directory and some files in it
+        with tempfile.TemporaryDirectory() as tmp_dir_name:
+            dir1 = os.path.join(tmp_dir_name, "dir")
+            os.makedirs(dir1)
 
-        result = get_args(validate_inputs=True, args=['-f', file_path, '-d', dir_path])
+            file1 = os.path.join(tmp_dir_name, "file1.py")
+            with open(file1, "w") as f:
+                f.write("print('file1')")
+            file2 = os.path.join(dir1, "file2.py")
+            with open(file2, "w") as f:
+                f.write("print('file2')")
 
-        assert_input_args(self, result, expected_directories=[dir_path], expected_files=[file_path])
+            result = get_args(validate_inputs=True, args=['-f', file1, '-d', dir1])
+
+            assert_input_args(self, result, expected_directories=[dir1], expected_files=[file1])
 
     def test_get_args_validation_error(self):
         result = get_args(validate_inputs=True, args=['-f', 'file1', '-d', 'dir1', '-a', 'aaa', 'bbb'])

@@ -1,4 +1,4 @@
-.PHONY: help watch-actions release-action changelog-action version version-as
+.PHONY: help watch-actions release-action changelog-action version version-as update-poetry-dependencies
 
 # Variables
 REF := $(if $(ref),$(ref),"dev")
@@ -19,6 +19,9 @@ changelog-action: ## Run changelog action
 
 release-action: ## Run release action
 	gh workflow run Release --ref $(REF) -f skip_release_file=$(SKIP_RELEASE_FILE) -f release_file_name=$(RELEASE_FILE_NAME) -f release_directory=$(RELEASE_DIRECTORY) -f skip_changelog=$(SKIP_CHANGELOG) -f version=$(VERSION) -f create_pr_for_branch=$(CREATE_PR_FOR_BRANCH)
+
+update-poetry-dependencies:  ## Update poetry dependencies
+	cat requirements.txt | xargs poetry add
 
 version: ## Get current program version
 	node -p -e "require('./package.json').version"

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.1...v0.1.2) (2023-04-13)
+
+
+### Fixes
+
+* the `main` function returns status code instead of Result object ([9ea8353](https://github.com/Payadel/pre-commit-hooks/commit/9ea8353797ce85ab74f58d42096754785f43f34e))
+
 ### [0.1.1](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.0...v0.1.1) (2023-04-12)
 
 
