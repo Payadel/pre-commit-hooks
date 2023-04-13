@@ -13,13 +13,6 @@ def get_file_name(file_path: str) -> Result[str]:
     return Result.ok(os.path.basename(file_path))
 
 
-def print_help() -> None:
-    """
-    The function prints a message prompting the user to use the "--help" command for more information.
-    """
-    print("Use --help to get more information.")  # pragma: no cover
-
-
 class PathType(Enum):
     """
     The class defines an enumeration of three path types: file, directory, and invalid.

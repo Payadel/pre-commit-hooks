@@ -4,16 +4,15 @@ from on_rails import Result, def_result
 
 from pre_commit_hooks.run_scripts._helpers.argument_helpers import get_args
 from pre_commit_hooks.run_scripts._helpers.script_helpers import run_scripts
-from pre_commit_hooks.run_scripts._helpers.utility import print_help
 
 
 def main(args: Optional[Sequence[str]] = None):
     """
     The function runs a program and prints its details and help message if it fails.
     """
-    return _run(args=args) \
-        .finally_tee(lambda result: print(f"\n{str(result)}")) \
-        .on_fail_tee(print_help)
+    result = _run(args=args) \
+        .finally_tee(lambda prev_result: print(f"\n{str(prev_result)}"))
+    return 0 if result.success else result.code()
 
 
 @def_result()
@@ -31,7 +30,4 @@ def _run(args: Optional[Sequence[str]] = None) -> Result:
 # the code block under this condition is executed, which in this case calls the `main()`
 # function. If the script is imported as a module, the code block is not executed.
 if __name__ == '__main__':  # pragma: no cover
-    res = main()
-    if res.success:
-        raise SystemExit(0)
-    raise SystemExit(res.code())
+    raise SystemExit(main())
