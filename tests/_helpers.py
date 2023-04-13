@@ -1,22 +1,11 @@
 # pragma: disable=All
 
-import os
 import unittest
 from typing import List, Optional
 
 from on_rails import Result
 
 from pre_commit_hooks.run_scripts._ResultDetails.ShellError import ShellError
-
-
-def get_test_path():
-    """
-    This function returns the path of the 'tests' directory within the current working directory.
-    """
-    cwd = os.getcwd()
-    if not cwd.endswith('tests'):
-        cwd += '/tests'
-    return cwd
 
 
 def assert_input_args(test_class: unittest.TestCase, target_result: Result,
