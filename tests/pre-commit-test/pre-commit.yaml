@@ -1,0 +1,14 @@
+repos:
+  - repo: local
+    hooks:
+      - id: run-script-file
+        name: run file script
+        entry: run-scripts
+        language: python
+        args: [ "-f=single-script.py", "arg1", "arg2", "arg3"]
+
+      - id: run-directory
+        name: run directory script
+        entry: run-scripts
+        language: python
+        args: [ "-d=commit", "arg1", "arg2", "arg3" ]
