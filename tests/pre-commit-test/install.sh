@@ -3,6 +3,7 @@
 dist_dir="../../dist"
 poetry_dir="../../"
 
+# Validate
 directories=("$dist_dir" "$poetry_dir")
 for dir in "${directories[@]}"; do
   if [ ! -d "$dir" ]; then
@@ -11,6 +12,10 @@ for dir in "${directories[@]}"; do
   fi
 done
 
+# Build
+(cd "$poetry_dir" && poetry build)
+
+# Install
 # Use find command to search for files with the .tar.gz extension and save result in variable
 result=$(find "$dist_dir" -name "*.tar.gz")
 
@@ -26,4 +31,4 @@ elif [ "$count" -gt 1 ]; then
   exit 1
 fi
 
-(cd "$poetry_dir" && poetry build) && pip install --upgrade "$result"
+pip install --upgrade "$result"
