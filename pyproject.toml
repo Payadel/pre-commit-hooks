@@ -12,6 +12,7 @@ packages = [{ include = "pre_commit_hooks" }]
 [tool.poetry.dependencies]
 python = "^3.10"
 on-rails = "4.0.1"
+pylity = ">=0.0.3"
 
 
 [tool.poetry.group.dev.dependencies]
