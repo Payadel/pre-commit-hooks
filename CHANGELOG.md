@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.2...v0.1.3) (2023-04-16)
+
+
+### Features
+
+* support python 3.8 ([04299e8](https://github.com/Payadel/pre-commit-hooks/commit/04299e8d09426ea93e50eba2a8d2551e8e8d7bf5))
+
 ### [0.1.2](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.1...v0.1.2) (2023-04-13)
 
 
