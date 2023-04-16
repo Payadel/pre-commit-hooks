@@ -4,10 +4,8 @@ from typing import List, Optional
 
 from on_rails import Result, SuccessDetail, ValidationError, def_result
 from on_rails.ResultDetails.Errors import NotFoundError
+from pylity import Path, PathType
 
-from pre_commit_hooks.run_scripts._helpers.utility import (PathType,
-                                                           check_path_type,
-                                                           get_file_name)
 from pre_commit_hooks.run_scripts._ResultDetails.ShellError import ShellError
 from pre_commit_hooks.run_scripts._ResultDetails.ShellOutput import ShellOutput
 
@@ -62,7 +60,7 @@ def _get_scripts(files_or_directories: Optional[List[str]]) -> Result[List[str]]
         if file_or_dir is None:
             return Result.fail(ValidationError(message="None is not file or directory!"))
 
-        path_type = check_path_type(file_or_dir)
+        path_type = Path.get_path_type(file_or_dir).on_fail_break_function().value
         if path_type == PathType.FILE:
             result_scripts.add(file_or_dir)
         elif path_type == PathType.DIRECTORY:
@@ -98,7 +96,7 @@ def _get_directory_scripts(directory: str) -> Result[List[str]]:
 
     scripts = os.listdir(directory)  # Get all files and directories
     scripts = [os.path.join(directory, script) for script in scripts]  # Get full path
-    scripts = [script for script in scripts if check_path_type(script) is PathType.FILE]  # Filter only files
+    scripts = [script for script in scripts if Path.get_path_type(script).on_fail_break_function().value is PathType.FILE]  # Filter only files
     scripts.sort()
 
     return Result.ok(scripts)
@@ -124,7 +122,7 @@ def _run_scripts(files: Optional[List[str]], args: Optional[List[str]] = None) -
     args_str = ' '.join(args) if args else ''
 
     for file in files:
-        get_file_name(file) \
+        Path.basename(file) \
             .on_success_tee(lambda name: print(f"Running {name}...", end="")) \
             .on_fail_tee(lambda prev_result: (
             print(f"Warning: Can not detect script name ({file})."),
