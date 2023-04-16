@@ -1,2 +1,2 @@
-on_rails==4.0.1
-pylity>=0.0.3
+on_rails==4.1.0
+pylity>=0.0.6
