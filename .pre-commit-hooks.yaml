@@ -5,7 +5,8 @@
   language: python
 
 - id: document-oriented
-  name: Document Oriented Check
+  name: document oriented check
   description: If the source file changes, at least one document must be updated.
   entry: document-oriented
   language: python
+  always_run: true
