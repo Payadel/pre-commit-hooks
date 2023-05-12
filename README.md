@@ -1,191 +1,193 @@
-<h1 align="center">
-  <a href="">
-    <img src="" alt="Logo" width="100" height="100">
-  </a>
-</h1>
-
 <div align="center">
-  PROJECT_NAME
+  <h1>pre-commit-hooks</h1>
+
   <br />
-  <a href="#getting-started"><strong>Getting Started »</strong></a>
-  <br />
-  <br />
-  <a href="https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
+  <a href="https://github.com/Payadel/pre-commit-hooks/issues/new?assignees=&labels=bug&template=BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
   ·
-  <a href="https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
+  <a href="https://github.com/Payadel/pre-commit-hooks/issues/new?assignees=&labels=enhancement&template=FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
   .
-  <a href="https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Ask a Question</a>
+  <a href="https://github.com/Payadel/pre-commit-hooks/issues/new?assignees=&labels=question&template=SUPPORT_QUESTION.md&title=support%3A+">Ask a Question</a>
 </div>
 
 <div align="center">
 <br />
 
-![GitHub](https://img.shields.io/github/license/User/Repo)
+[![code with love by Payadel](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-Payadel-ff1414.svg?style=flat-square)](https://github.com/Payadel)
 
-[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![code with love by GITHUB_USERNAME](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-GITHUB_USERNAME-ff1414.svg?style=flat-square)](https://github.com/GITHUB_USERNAME)
+![Build Status](https://github.com/payadel/pre-commit-hooks/actions/workflows/build.yaml/badge.svg?branch=dev)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/payadel/pre-commit-hooks)
+
+![GitHub](https://img.shields.io/github/license/Payadel/pre-commit-hooks)
+[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/Payadel/pre-commit-hooks/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 
 </div>
 
-<details>
-<summary>Table of Contents</summary>
+This project provides **Git hooks** for the [pre-commit](https://pre-commit.com/) framework. This project has several
+hooks,
+each of which is explained below.
 
-- [About](#about)
-    - [Demo](#demo)
-    - [Built With](#built-with)
-- [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-- [Usage](#usage)
-    - [Documentation](#documentation)
-- [Known issues](#known-issues)
-- [CHANGELOG](#changelog)
-- [Features](#features)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [Used By](#used-by)
-- [FAQ](#faq)
-- [Project assistance](#project-assistance)
-- [Contributing](#contributing)
-- [Authors & contributors](#authors--contributors)
-- [Security](#security)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
-- [Related](#related)
+## Prerequisites
 
-</details>
+Install pre-commit base this guide: [pre-commit installation guide](https://pre-commit.com/#install)
 
-## About
+## Hook: run_scripts
 
-> **[?]**
-> Provide general information about your project here.
-> Put a meaningful, short, plain-language description of:
-> What problem does it (intend to) solve?
-> What is the purpose of your project?
-> What this project is trying to accomplish and why it matters?
-> Why did you undertake it?
-> Describe the problem(s) this project solves.
-> Describe how this software can improve the lives of its audience.
-> Describe what sets this apart from related-projects.
-> You don't have to answer all the questions -- just the ones relevant to your project.
+### About
 
-### Demo
+#### Summary
 
-**Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
+`run_scripts` allows you to execute a set of related scripts with a title and a
+condition. This hook receives a list of files and folders in its parameter and collects the set of scripts from the
+folders. Then, it executes them and makes sure that all the scripts complete successfully. If a script encounters an
+error and exits with a non-zero code, the hook displays the details of the error. This hook is reliable and designed
+specifically for this purpose.
 
-<details>
-<summary>Screenshots</summary>
-<br>
+#### Explain
 
-> **[?]**
-> Please provide your screenshots here.
+**Question:** What should you do if you have one or more related scripts that you want to run with a specific title and
+condition?
 
-|                               Home Page                               |                               Login Page                               |
-| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
+Basic solution: You could create a script file and place each script inside it. However, this approach may require
+manually adding scripts from different folders or writing a script to gather all the files in a folder before executing
+them. Additionally, controlling the outputs can be challenging. While this approach is viable, it can be troublesome,
+error-prone, lacks specific versioning, and isn't easy to manage across different projects.
 
-</details>
+**Better solution:** Use this hook. It takes a list of files and folders as parameters, collects the set of scripts from
+the specified folders, and executes them, ensuring that all scripts run successfully. If a script encounters an error
+and exits with a non-zero code, the hook displays the error details. It is a thoroughly tested, reliable, and
+purpose-built solution.
 
-### Built With
+#### Built With
 
-> **[?]**
-> Please provide the technologies that are used in the project.
+`run_scripts` hook is compatible with Python 3.8 and later versions.
 
-**Client:** React, Redux, TailwindCSS
+### Getting Started
 
-**Server:** Node, Express
+#### Usage
 
-## Getting Started
+To use `run_scripts` hook in your project, you need to:
 
-### Prerequisites
+1. Install [pre-commit](https://pre-commit.com/) framework on your system. You can do this by
+   running `pip install pre-commit`.
+2. Add the following code to your `.pre-commit-config.yaml` file:
 
-> **[?]**
-> What are the project requirements/dependencies?
-> Describe any dependencies that must be installed for this software to work. This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth. If specific versions of other software are required, or known not to work, call that out.
+```yaml
+- repo: https://github.com/Payadel/pre-commit-hooks
+  rev: v0.1.5  # Ensure it is latest
+  hooks:
+    - id: run_scripts
+      args: [ '-f=path/to/file', '-d=path/to/directory' ]
+      stages: [ push ]
+      pass_filenames: false
 
-### Installation
-
-> **[?]**
-> Describe how to install and get started with the project.
-> Detailed instructions on how to install, configure, and get the project running. This should be frequently tested to ensure reliability. Alternatively, link to a separate [INSTALL](INSTALL.md) document.
-
-## Usage
-
-> **[?]**
-> How does one go about using it?
-> Provide various use cases and code examples here.
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-    return <Component/>
-}
 ```
 
-### Documentation
+3. Run `pre-commit install` to install the hook.
 
-[Documentation](https://linktodocumentation)
+### Features
 
-## Known issues
+- Allows you to execute related scripts with a title and a condition
+- Collects scripts from folders and executes them
+- Makes sure all scripts complete successfully
+- Displays details of any errors encountered during execution
 
-Document any known significant shortcomings with the software.
+## Hook: document oriented
+
+### About
+
+#### Summary
+
+Before each push, `document-oriented` makes sure that if the source has changed, at least one document file has been
+updated, otherwise it stops the push and reminds that the document needs to be updated as well. You can specify the
+pattern of sources and
+documents for this hook.
+
+### Explain
+
+Documentation is a crucial component of any project. To ensure that your project is visible, used, and has contributors,
+it must have a comprehensive and up-to-date documentation. It is essential to update the relevant documents after making
+changes to the code without delay.
+
+While most developers understand the significance of documentation, they may occasionally forget or procrastinate
+updating it. This issue is particularly prevalent in projects with multiple active programmers that are developed over
+an extended period.
+
+To help you tackle this problem, this hook can be used. If your documents are in your code repository, you can specify
+the pattern of sources and documents using this hook. Before each push, this hook checks all the commits that are going
+to be pushed. If the source has been modified, it ensures that at least one document has been updated; otherwise, it
+halts the push operation and reminds you to update the relevant documents.
+
+#### Built With
+
+`document_oriented` hook is compatible with Python 3.8 and later versions.
+
+### Getting Started
+
+#### Usage
+
+To use `document_oriented` hook in your project, you need to:
+
+1. Install [pre-commit](https://pre-commit.com/) framework on your system. You can do this by
+   running `pip install pre-commit`.
+2. Add the following code to your `.pre-commit-config.yaml` file:
+
+```
+- repo: https://github.com/Payadel/pre-commit-hooks
+  rev: v0.1.5  # Ensure it is latest
+  hooks:
+    - id: document-oriented
+      args: ['--doc=*.md', '--source=src/*']
+```
+
+3. Run `pre-commit install` to install the hook.
+
+### Features
+
+- Ensures that project documentation is up-to-date
+- Can specify the pattern of sources and documents
+
+#### FAQ
+
+##### Q: What if I want to skip the document update check for certain commits?
+
+A: You can skip the document update check for certain commits by adding the `SKIP=document-oriented` flag to
+your `git commit` command. For example:
+
+```
+SKIP=document-oriented git commit -m "Commit message"
+```
 
 ## CHANGELOG
 
-## Features
-
--
--
+Please see the [CHANGELOG.md](CHANGELOG.md) file.
 
 ## Roadmap
 
-See the [open issues](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues) for a list of proposed features (and known
+See the [open issues](https://github.com/Payadel/pre-commit-hooks/issues) for a list of proposed features (and known
 issues).
 
-- [Top Feature Requests](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (
+- [Top Feature Requests](https://github.com/Payadel/pre-commit-hooks/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (
   Add your votes using the 👍 reaction)
-- [Top Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (
+- [Top Bugs](https://github.com/Payadel/pre-commit-hooks/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (
   Add your votes using the 👍 reaction)
-- [Newest Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+- [Newest Bugs](https://github.com/Payadel/pre-commit-hooks/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ## Support
 
-> **[?]**
-> Provide additional ways to contact the project maintainer/maintainers.
-
 Reach out to the maintainer at one of the following places:
 
-- [GitHub issues](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
-- Contact options listed on [this GitHub profile](https://github.com/GITHUB_USERNAME)
-
-## Used By
-
-This project is used by the following companies:
-
-- Company 1
-- Company 2
-
-## FAQ
-
-#### Question 1
-
-Answer 1
-
-#### Question 2
-
-Answer 2
+- [GitHub issues](https://github.com/Payadel/pre-commit-hooks/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
 
 ## Project assistance
 
-If you want to say **thank you** or/and support active development of PROJECT_NAME:
+If you want to say **thank you** or/and support active development of this project:
 
-- Add a [GitHub Star](https://github.com/GITHUB_USERNAME/REPO_SLUG) to the project.
-- Tweet about the PROJECT_NAME.
+- Add a [GitHub Star](https://github.com/Payadel/pre-commit-hooks) to the project.
+- Tweet about the project.
 - Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or your
   personal blog.
 
-Together, we can make PROJECT_NAME **better**!
+Together, we can make this project **better**!
 
 ## Contributing
 
@@ -197,14 +199,14 @@ Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you f
 
 ## Authors & contributors
 
-The original setup of this repository is by [FULL_NAME](https://github.com/GITHUB_USERNAME).
+The original setup of this repository is by [Payadel](https://github.com/Payadel).
 
 For a full list of all authors and contributors,
-see [the contributors page](https://github.com/GITHUB_USERNAME/REPO_SLUG/contributors).
+see [the contributors page](https://github.com/Payadel/pre-commit-hooks/contributors).
 
 ## Security
 
-PROJECT_NAME follows good practices of security, but 100% security cannot be assured. PROJECT_NAME is provided **"as
+This project follows good practices of security, but 100% security cannot be assured. this project is provided **"as
 is"** without any **warranty**.
 
 _For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
@@ -215,14 +217,6 @@ This project is licensed under the **GPLv3**.
 
 See [LICENSE](LICENSE) for more information.
 
-## Acknowledgements
-
-> **[?]**
-> If your work was funded by any organization or institution, acknowledge their support here.
-> In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
-
 ## Related
 
-Here are some related projects
-
-[Awesome README](https://github.com/matiassingers/awesome-readme)
+- [pre-commit](https://pre-commit.com)
