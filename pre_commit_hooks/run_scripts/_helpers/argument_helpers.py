@@ -1,6 +1,6 @@
 import argparse
 import os
-from typing import Optional, Sequence
+from typing import Dict, Optional, Sequence
 
 from on_rails import Result, def_result
 from on_rails.ResultDetails.Errors import ValidationError
@@ -72,7 +72,7 @@ def _inputs_must_valid(args) -> Result:
     if not directories and not files:
         return Result.fail(ValidationError(message="At least one directory or file must be set."))
 
-    errors: dict[str, str] = {}
+    errors: Dict[str, str] = {}
     if directories:
         for directory in directories:
             if not os.path.isdir(directory):

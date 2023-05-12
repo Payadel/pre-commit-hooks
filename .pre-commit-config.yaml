@@ -31,18 +31,14 @@ repos:
     hooks:
       - id: isort
 
-#  - repo: https://github.com/PyCQA/pylint/
-#    rev: v2.14.5
-#    hooks:
-#      - id: pylint
-#        args: [ "pre_commit_hooks/" ]
-#        exclude: tests/  # Prevent files in tests/ to be passed in to pylint.
-
-  - repo: local
+  - repo: https://github.com/Payadel/pre-commit-hooks
+    rev: v0.1.5
     hooks:
-      - id: check-tox-before-push
+      - id: document-oriented
+        args: [ '--doc=README.md', '--source=pre_commit_hooks/*' ]
+        pass_filenames: false
+      - id: run-scripts
         name: check tox before push
-        language: script
-        entry: .hooks/check-tox.sh
-        args: [ "dev" ]
+        args: [ '-f=.git-hooks/check-tox.sh', 'dev' ]
         stages: [ push ]
+        pass_filenames: false

@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.5...v0.1.6) (2023-05-12)
+
+
+### Fixes
+
+* **document-oriented:** set default `pass_filenames` false ([a2c62eb](https://github.com/Payadel/pre-commit-hooks/commit/a2c62eb0a91c6bb9349bf6ebb8f7932bb32e9d3b))
+
+
+### Documents
+
+* update CONTRIBUTING.md ([0ced568](https://github.com/Payadel/pre-commit-hooks/commit/0ced56828e2e0ff4db00a1dd42c8f9acbc8c56a4))
+* update README.md ([2f375f3](https://github.com/Payadel/pre-commit-hooks/commit/2f375f323b1717056dbc5b520b453af08255e466))
+* update README.md ([3d2269b](https://github.com/Payadel/pre-commit-hooks/commit/3d2269bb0295f8eed6cd7fb1be553c63158d29b3))
+
+
+### Development: CI/CD, Build, etc
+
+* fix pylint in `tox` ([14b00ae](https://github.com/Payadel/pre-commit-hooks/commit/14b00aec73fe2359daedf1000a88e97f32cc3ca0))
+* remove `pr-labels.yml` ([60c4b01](https://github.com/Payadel/pre-commit-hooks/commit/60c4b014f08e760426bf2b778c058e9e92ca98d6))
+* update .pre-commit-config.yaml ([177ef74](https://github.com/Payadel/pre-commit-hooks/commit/177ef74b232abe3dd43e7f697000039961c934a8))
+* update .pylintrc ([e5244e3](https://github.com/Payadel/pre-commit-hooks/commit/e5244e30d8690daaaf0bb65590c420210088a4cf))
+* update `build.yaml` events ([76b97e1](https://github.com/Payadel/pre-commit-hooks/commit/76b97e115350f13531340bc2477078201ac99b4b))
+
 ### [0.1.5](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.4...v0.1.5) (2023-05-12)
 
 
