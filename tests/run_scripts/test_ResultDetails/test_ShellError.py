@@ -4,7 +4,7 @@ import subprocess
 import unittest
 
 from pre_commit_hooks.run_scripts._ResultDetails.ShellError import ShellError
-from tests._helpers import assert_shell_error
+from tests.run_scripts._helpers import assert_shell_error
 
 
 class TestShellError(unittest.TestCase):
