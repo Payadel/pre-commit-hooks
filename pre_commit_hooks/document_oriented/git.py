@@ -1,19 +1,27 @@
 import subprocess
-from typing import List
+from typing import List, Optional
 
-from on_rails import Result, def_result
+from on_rails import ErrorDetail, Result, def_result
 
 
 @def_result()
-def get_remote_branch_name() -> Result[str]:
-    return Result.ok(
-        subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "@{upstream}"]).decode('utf-8').strip())
+def get_remote_branch_name() -> Result[Optional[str]]:
+    result = subprocess.run(["git", "rev-parse", "--abbrev-ref", "@{upstream}"], check=False, stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE)
+
+    if result.returncode == 0:
+        return Result.ok(result.stdout.decode('utf-8').strip())
+
+    error = result.stderr.decode('utf-8').strip()
+    if 'no such branch:' in error or 'no upstream configured for branch' in error:
+        return Result.ok(None)
+    return Result.fail(ErrorDetail(title="get remote branch name failed.", message=error, code=result.returncode))
 
 
 @def_result()
 def get_changed_files() -> Result[List[str]]:
     return get_remote_branch_name() \
-        .on_success_operate_when(lambda remote_branch_name: remote_branch_name == '', lambda: [], break_rails=True) \
+        .on_success_operate_when(lambda remote_branch_name: not remote_branch_name, lambda: [], break_rails=True) \
         .on_success(lambda remote_branch_name: _get_changed_files(remote_branch_name))
 
 
