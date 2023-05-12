@@ -3,3 +3,9 @@
   description: Run your local hook scripts.
   entry: run-scripts
   language: python
+
+- id: document-oriented
+  name: Document Oriented Check
+  description: If the source file changes, at least one document must be updated.
+  entry: document-oriented
+  language: python

@@ -25,6 +25,7 @@ tox = "^4.4.7"
 
 [tool.poetry.scripts]
 run-scripts = "pre_commit_hooks.run_scripts.main:main"
+document-oriented = "pre_commit_hooks.document_oriented.main:main"
 
 [build-system]
 requires = ["poetry-core"]
