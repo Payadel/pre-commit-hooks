@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.4...v0.1.5) (2023-05-12)
+
+
+### Fixes
+
+* **document-oriented:** fix bug when branch is not exist in remote ([837c6f9](https://github.com/Payadel/pre-commit-hooks/commit/837c6f92f91f55a99e74158ee2de9d3906db727f))
+* **document-oriented:** set `always_run` to `true` ([2ef9007](https://github.com/Payadel/pre-commit-hooks/commit/2ef9007daf7cedbd51ab0eb78287bc3e11e9aefd))
+
 ### [0.1.4](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.3...v0.1.4) (2023-05-12)
 
 
