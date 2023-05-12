@@ -12,3 +12,4 @@ package-lock.json
 .*.sw[a-z]
 poetry.lock
 **.pyc
+venv

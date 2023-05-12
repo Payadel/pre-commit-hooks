@@ -1,4 +1,4 @@
-.PHONY: help watch-actions release-action changelog-action version version-as update-poetry-dependencies
+.PHONY: help watch-actions release-action changelog-action version version-as update-poetry-dependencies delete-cache
 
 # Variables
 REF := $(if $(ref),$(ref),"dev")
@@ -22,6 +22,9 @@ changelog-action: ## Run changelog action
 # Targets for running standard-version commands
 version: ## Get current program version
 	node -p -e "require('./package.json').version"
+
+delete-cache: ## Delete untracked files
+	sudo rm -r .pytest_cache .tox dist htmlcov node_modules .coverage package-lock.json poetry.lock venv
 
 help: ## Display this help message
 	@echo "Usage: make <target>"
