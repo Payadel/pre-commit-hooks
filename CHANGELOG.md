@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.3...v0.1.4) (2023-05-12)
+
+
+### Features
+
+* add document oriented hook ([5d10509](https://github.com/Payadel/pre-commit-hooks/commit/5d105096e0898c05aa3bb0859df6bf5b1c7fa599))
+
+
+### Development: CI/CD, Build, etc
+
+* update release action ([7b693d1](https://github.com/Payadel/pre-commit-hooks/commit/7b693d1ceefb1751e74b3a9b490166f042d7178c))
+* use  in actions ([9a678a2](https://github.com/Payadel/pre-commit-hooks/commit/9a678a28f71995d0ef9a011bf6dfe5f0a10db178))
+
+
+### Fixes
+
+* **document-oriented:** minor fix, refactor and add tests ([151f085](https://github.com/Payadel/pre-commit-hooks/commit/151f085fe6930a2947f6ae59cfbb73465596d4fa))
+
 ### [0.1.3](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.2...v0.1.3) (2023-04-16)
 
 
