@@ -31,13 +31,6 @@ repos:
     hooks:
       - id: isort
 
-  - repo: https://github.com/PyCQA/pylint/
-    rev: v2.14.5
-    hooks:
-      - id: pylint
-        args: [ "pre_commit_hooks/*" ]
-        exclude: tests/  # Prevent files in tests/ to be passed in to pylint.
-
   - repo: https://github.com/Payadel/pre-commit-hooks
     rev: v0.1.5
     hooks:
