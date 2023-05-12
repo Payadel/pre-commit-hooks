@@ -73,7 +73,7 @@ To use `run_scripts` hook in your project, you need to:
 
 ```yaml
 - repo: https://github.com/Payadel/pre-commit-hooks
-  rev: v0.1.5  # Ensure it is latest
+  rev: v0.1.7  # Ensure it is latest
   hooks:
     - id: run_scripts
       args: [ '-f=path/to/file', '-d=path/to/directory' ]
@@ -131,9 +131,9 @@ To use `document_oriented` hook in your project, you need to:
    running `pip install pre-commit`.
 2. Add the following code to your `.pre-commit-config.yaml` file:
 
-```
+```yaml
 - repo: https://github.com/Payadel/pre-commit-hooks
-  rev: v0.1.5  # Ensure it is latest
+  rev: v0.1.7  # Ensure it is latest
   hooks:
     - id: document-oriented
       args: ['--doc=*.md', '--source=src/*']
