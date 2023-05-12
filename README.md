@@ -30,7 +30,7 @@ each of which is explained below.
 
 Install pre-commit base this guide: [pre-commit installation guide](https://pre-commit.com/#install)
 
-## Hook: run_scripts
+## Hook: run-scripts
 
 ### About
 
@@ -91,7 +91,7 @@ To use `run_scripts` hook in your project, you need to:
 - Makes sure all scripts complete successfully
 - Displays details of any errors encountered during execution
 
-## Hook: document oriented
+## Hook: document-oriented
 
 ### About
 
