@@ -7,7 +7,7 @@ from on_rails import (ValidationError, assert_error_detail,
                       assert_result_with_type)
 
 from pre_commit_hooks.run_scripts._helpers.argument_helpers import get_args
-from tests._helpers import assert_input_args
+from tests.run_scripts._helpers import assert_input_args
 
 
 class TestArgumentHelpers(unittest.TestCase):

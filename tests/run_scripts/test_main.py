@@ -9,7 +9,7 @@ from pre_commit_hooks.run_scripts._helpers.script_helpers import (_get_scripts,
                                                                   _run_shell)
 from pre_commit_hooks.run_scripts._ResultDetails.ShellError import ShellError
 from pre_commit_hooks.run_scripts.main import _run, main
-from tests._helpers import assert_shell_error
+from tests.run_scripts._helpers import assert_shell_error
 
 
 class TestMain(unittest.TestCase):

@@ -1,7 +1,7 @@
 # https://python-poetry.org/docs/pyproject/
 [tool.poetry]
 name = "pre-commit-hooks"
-version = "0.1.3"
+version = "0.1.4"
 description = "Some hooks for pre-commit."
 authors = ["Payadel <payadelteam@gmail.com>"]
 license = "GPLV3"
@@ -25,6 +25,7 @@ tox = "^4.4.7"
 
 [tool.poetry.scripts]
 run-scripts = "pre_commit_hooks.run_scripts.main:main"
+document-oriented = "pre_commit_hooks.document_oriented.main:main"
 
 [build-system]
 requires = ["poetry-core"]
