@@ -1,2 +1,2 @@
-on_rails==4.1.0
+on_rails==4.2.0
 pylity>=0.0.10
