@@ -38,6 +38,6 @@ repos:
         pass_filenames: false
       - id: run-scripts
         name: check tox before push
-        args: [ '-f=.git-hooks/check-tox.sh', 'dev' ]
+        args: [ '-f=scripts/check-tox.sh', 'dev' ]
         stages: [ push ]
         pass_filenames: false
