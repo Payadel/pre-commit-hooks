@@ -1,7 +1,7 @@
 # https://python-poetry.org/docs/pyproject/
 [tool.poetry]
 name = "pre-commit-hooks"
-version = "0.1.8"
+version = "1.0.0"
 description = "Some hooks for pre-commit."
 authors = ["Payadel <payadelteam@gmail.com>"]
 license = "GPLV3"

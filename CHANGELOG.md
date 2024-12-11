@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.8...v1.0.0) (2024-12-11)
+
+
+### Documentation
+
+* update latest version in README.md ([bdd480b](https://github.com/Payadel/pre-commit-hooks/commit/bdd480bccc6e8c3d6857dfd164c5cbe16a776c8a))
+
+
+### Miscellaneous Chores
+
+* release 1.0.0 ([b116172](https://github.com/Payadel/pre-commit-hooks/commit/b11617200474abc2740aaeab13b26b417a9d5b8e))
+
 ## [0.1.8](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.7...v0.1.8) (2024-12-11)
 
 
