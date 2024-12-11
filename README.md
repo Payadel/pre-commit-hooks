@@ -73,7 +73,7 @@ To use `run-scripts` hook in your project, you need to:
 
 ```yaml
 - repo: https://github.com/Payadel/pre-commit-hooks
-  rev: v0.1.7  # Ensure it is latest
+  rev: v1.0.0  # Ensure it is latest
   hooks:
     - id: run-scripts
       args: [ '-f=path/to/file', '-d=path/to/directory' ]
@@ -133,7 +133,7 @@ To use `document_oriented` hook in your project, you need to:
 
 ```yaml
 - repo: https://github.com/Payadel/pre-commit-hooks
-  rev: v0.1.7  # Ensure it is latest
+  rev: v1.0.0  # Ensure it is latest
   hooks:
     - id: document-oriented
       args: ['--doc=*.md', '--source=src/*']
