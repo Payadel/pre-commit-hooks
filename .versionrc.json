@@ -21,6 +21,10 @@
       "section": "Refactors"
     },
     {
+      "type": "test",
+      "section": "Tests"
+    },
+    {
       "type": "ci",
       "section": "Development: CI/CD, Build, etc"
     },

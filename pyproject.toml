@@ -11,14 +11,14 @@ packages = [{ include = "pre_commit_hooks" }]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-on-rails = "4.1.0"
+on-rails = "4.2.0"
 pylity = ">=0.0.6"
 
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.2.0"
 pytest = "^7.2.2"
-pylint = "^2.17.0"
+pylint = "^3.0.2"
 isort = "^5.12.0"
 coverage = "^7.2.2"
 tox = "^4.4.7"

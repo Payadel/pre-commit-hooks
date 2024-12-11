@@ -9,3 +9,4 @@ disable=
     W0640, # Cell variable file defined in loop (cell-var-from-loop)
     C0116, # Missing function or method docstring (missing-function-docstring)
     E0401, # Unable to import (import-error)
+    R0917, # Too many positional arguments (too-many-positional-arguments)

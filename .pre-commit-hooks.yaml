@@ -4,7 +4,6 @@
   entry: run-scripts
   language: python
 
-
 - id: document-oriented
   name: document oriented check
   description: If the source file changes, at least one document must be updated.
