@@ -36,7 +36,7 @@ Install pre-commit base this guide: [pre-commit installation guide](https://pre-
 
 #### Summary
 
-`run_scripts` allows you to execute a set of related scripts with a title and a
+`run-scripts` allows you to execute a set of related scripts with a title and a
 condition. This hook receives a list of files and folders in its parameter and collects the set of scripts from the
 folders. Then, it executes them and makes sure that all the scripts complete successfully. If a script encounters an
 error and exits with a non-zero code, the hook displays the details of the error. This hook is reliable and designed
@@ -59,13 +59,13 @@ purpose-built solution.
 
 #### Built With
 
-`run_scripts` hook is compatible with Python 3.8 and later versions.
+`run-scripts` hook is compatible with Python 3.8 and later versions.
 
 ### Getting Started
 
 #### Usage
 
-To use `run_scripts` hook in your project, you need to:
+To use `run-scripts` hook in your project, you need to:
 
 1. Install [pre-commit](https://pre-commit.com/) framework on your system. You can do this by
    running `pip install pre-commit`.
@@ -75,7 +75,7 @@ To use `run_scripts` hook in your project, you need to:
 - repo: https://github.com/Payadel/pre-commit-hooks
   rev: v0.1.7  # Ensure it is latest
   hooks:
-    - id: run_scripts
+    - id: run-scripts
       args: [ '-f=path/to/file', '-d=path/to/directory' ]
       stages: [ push ]
       pass_filenames: false
