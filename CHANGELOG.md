@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.8](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.7...v0.1.8) (2024-12-11)
+
+
+### Bug Fixes
+
+* [#34](https://github.com/Payadel/pre-commit-hooks/issues/34) ([307e8b3](https://github.com/Payadel/pre-commit-hooks/commit/307e8b387fab7e4d86013e9520f38170ebfeb131))
+
+
+### Documentation
+
+* update README.md ([307e8b3](https://github.com/Payadel/pre-commit-hooks/commit/307e8b387fab7e4d86013e9520f38170ebfeb131)), closes [#34](https://github.com/Payadel/pre-commit-hooks/issues/34)
+* update to new version of payadel/readme template ([cef70f9](https://github.com/Payadel/pre-commit-hooks/commit/cef70f97fc6573a1e9bbbf3460212c4ea3ee1aec))
+
 ### [0.1.7](https://github.com/Payadel/pre-commit-hooks/compare/v0.1.6...v0.1.7) (2023-05-12)
 
 
